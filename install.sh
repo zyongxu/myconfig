@@ -1,16 +1,28 @@
 #!/bin/bash
 
+# Fetch git submodules
+git submodule update --init --recursive
+
 #################################
 #             Shell             #
 #################################
 # download on-my-zsh
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+
 # set zsh as default shell
 chsh -s /usr/bin/zsh
+
 # link .zshrc
 ln -s "$(pwd)/zshrc" ~/.zshrc
 
-# set tmux config
+# install solarized
+sudo apt-get install dconf-cli && \
+gnome-terminal-colors-solarized/install.sh
+
+#################################
+#              tmux             #
+#################################
+# link tmux config
 ln -s "$(pwd)/tmux.conf" ~/.tmux.conf
 
 #################################
