@@ -1,4 +1,4 @@
-Set basic environments of terminal
+Basic configurations to:
   1. use zsh (with on-my-zsh config)
   2. set vim config
   3. set tmux config
