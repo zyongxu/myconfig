@@ -7,9 +7,14 @@ set nocompatible
 " Sets how many lines of history VIM has to remember
 set history=1000
 
+" turn on syntax highlighting
+syntax on
+
 " Enable pathogen
 execute pathogen#infect()
-syntax on
+" refresh :help docs
+call pathogen#infect()
+Helptags
 
 " Enable filetype plugins
 filetype plugin on
@@ -21,7 +26,9 @@ set showcmd
 " With a map leader it's possible to do extra key combinations
 " like <leader>w saves the current file
 let mapleader = ";"
-
+" local leader is meant to be a prefix for mappings that only take
+" effect for certain types of files, like .tex
+let maplocalleader = "\\"
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => VIM plug-ins config
@@ -257,6 +264,15 @@ func! DeleteTrailingWS()
 endfunc
 autocmd BufWrite *.py :call DeleteTrailingWS()
 autocmd BufWrite *.coffee :call DeleteTrailingWS()
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => vim-latex configs
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" IMPORTANT: grep will sometimes skip displaying the file name if you
+" search in a singe file. This will confuse Latex-Suite. Set your grep
+" program to always generate a file-name.
+set grepprg=grep\ -nH\ $*
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
