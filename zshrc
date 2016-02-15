@@ -85,3 +85,4 @@ source $ZSH/oh-my-zsh.sh
 alias l="ls -lF"
 alias ll="ls -alF"
 alias c="clear"
+alias gdc="git diff --cached"

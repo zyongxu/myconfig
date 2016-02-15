@@ -35,5 +35,8 @@ curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
 # install solarized
 git clone git://github.com/altercation/vim-colors-solarized.git ~/.vim/bundle/vim-colors-solarized
 
+# install neocomplete
+git clone https://github.com/Shougo/neocomplete.vim.git ~/.vim/bundle/neocomplete.vim
+
 # set vim config
 ln -s "$(pwd)/vimrc" ~/.vimrc

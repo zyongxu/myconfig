@@ -42,6 +42,19 @@ let maplocalleader = "\\"
 " YouCompleteMe (YCM)
 "let g:ycm_autoclose_preview_window_after_completion=1
 
+" turn on neocomplete
+let g:neocomplete#enable_at_startup = 1
+" neocomplete for vimtex
+if !exists('g:neocomplete#sources#omni#input_patterns')
+  let g:neocomplete#sources#omni#input_patterns = {}
+endif
+let g:neocomplete#sources#omni#input_patterns.tex =
+      \ '\v\\%('
+      \ . '\a*%(ref|cite)\a*%(\s*\[[^]]*\])?\s*\{[^{}]*'
+      \ . '|includegraphics%(\s*\[[^]]*\])?\s*\{[^{}]*'
+      \ . '|%(include%(only)?|input)\s*\{[^{}]*'
+      \ . ')'
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => VIM user interface
