@@ -1,42 +1,42 @@
 #!/bin/bash
 
-# Fetch git submodules
+echo "Fetch git submodules..."
 git submodule update --init --recursive
 
 #################################
 #             Shell             #
 #################################
-# download on-my-zsh
+echo "download on-my-zsh"
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
-# set zsh as default shell
+echo "set zsh as default shell"
 chsh -s /usr/bin/zsh
 
-# link .zshrc
+echo "link .zshrc"
 ln -s "$(pwd)/zshrc" ~/.zshrc
 
-# install solarized
+echo "install solarized"
 sudo apt-get install dconf-cli && \
 gnome-terminal-colors-solarized/install.sh
 
 #################################
 #              tmux             #
 #################################
-# link tmux config
+echo "link tmux config"
 ln -s "$(pwd)/tmux.conf" ~/.tmux.conf
 
 #################################
 #              Vim              #
 #################################
-# install pathogen
+echo "install pathogen"
 mkdir -p ~/.vim/autoload ~/.vim/bundle && \
 curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
 
-# install solarized
+echo "install solarized vim theme"
 git clone git://github.com/altercation/vim-colors-solarized.git ~/.vim/bundle/vim-colors-solarized
 
-# install neocomplete
+echo "install neocomplete"
 git clone https://github.com/Shougo/neocomplete.vim.git ~/.vim/bundle/neocomplete.vim
 
-# set vim config
+echo "link vim config"
 ln -s "$(pwd)/vimrc" ~/.vimrc
