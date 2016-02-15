@@ -42,8 +42,12 @@ let maplocalleader = "\\"
 " YouCompleteMe (YCM)
 "let g:ycm_autoclose_preview_window_after_completion=1
 
+"------------------ neocomplete ------------------
 " turn on neocomplete
 let g:neocomplete#enable_at_startup = 1
+" Use smartcase
+let g:neocomplete#enable_smart_case = 1
+
 " neocomplete for vimtex
 if !exists('g:neocomplete#sources#omni#input_patterns')
   let g:neocomplete#sources#omni#input_patterns = {}
@@ -54,6 +58,8 @@ let g:neocomplete#sources#omni#input_patterns.tex =
       \ . '|includegraphics%(\s*\[[^]]*\])?\s*\{[^{}]*'
       \ . '|%(include%(only)?|input)\s*\{[^{}]*'
       \ . ')'
+" <TAB>: completion
+inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
