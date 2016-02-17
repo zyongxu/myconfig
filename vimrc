@@ -43,6 +43,8 @@ let maplocalleader = "\\"
 "let g:ycm_autoclose_preview_window_after_completion=1
 
 "------------------ neocomplete ------------------
+" Disable AutoComplPop -- neocomplete has its own pop up window
+let g:acp_enableAtStartup = 0
 " turn on neocomplete
 let g:neocomplete#enable_at_startup = 1
 " Use smartcase
