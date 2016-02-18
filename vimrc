@@ -33,15 +33,6 @@ let maplocalleader = "\\"
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => VIM plug-ins config
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Jedi
-"let g:jedi#use_splits_not_buffers = "left"
-"let g:jedi#popup_select_first = 0
-" disable the docstring window to automatically popup
-"autocmd FileType python setlocal completeopt-=preview
-
-" YouCompleteMe (YCM)
-"let g:ycm_autoclose_preview_window_after_completion=1
-
 "------------------ neocomplete ------------------
 " Disable AutoComplPop -- neocomplete has its own pop up window
 let g:acp_enableAtStartup = 0
@@ -288,15 +279,6 @@ autocmd BufWrite *.coffee :call DeleteTrailingWS()
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => vim-latex configs
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" IMPORTANT: grep will sometimes skip displaying the file name if you
-" search in a singe file. This will confuse Latex-Suite. Set your grep
-" program to always generate a file-name.
-"not using vim-latex: set grepprg=grep\ -nH\ $*
-
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => vimgrep searching and cope displaying
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " When you press gv you vimgrep after the selected text
@@ -336,9 +318,6 @@ noremap <Leader>m mmHmt:%s/<C-V><cr>//ge<cr>'tzt'm
 
 " Quickly open a buffer for scripbble
 map <leader>q :e ~/buffer<cr>
-
-" Toggle paste mode on and off
-map <leader>pp :setlocal paste!<cr>
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
