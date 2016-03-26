@@ -38,5 +38,11 @@ git clone git://github.com/altercation/vim-colors-solarized.git ~/.vim/bundle/vi
 echo "install neocomplete"
 git clone https://github.com/Shougo/neocomplete.vim.git ~/.vim/bundle/neocomplete.vim
 
+echo "install vimtex"
+git clone https://github.com/lervag/vimtex.git ~/.vim/bundle/vimtex.vim
+
 echo "link vim config"
 ln -s "$(pwd)/vimrc" ~/.vimrc
+
+echo "link latexmk config"
+ln -s "$(pwd)/latexmkrc" ~/.latexmkrc
