@@ -65,6 +65,10 @@ let g:netrw_winsize = 25
 "------------------ ctrlp.vim ------------------
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 let g:ctrlp_map = '<c-n>'
+" search by filename, not by path
+let g:ctrlp_by_filename = 1
+" regex style name matching
+let g:ctrlp_regexp = 1
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => VIM user interface
