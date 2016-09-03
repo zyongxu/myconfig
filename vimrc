@@ -54,6 +54,14 @@ let g:neocomplete#sources#omni#input_patterns.tex =
 " <TAB>: completion
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 
+"------------------ netrw (directory browser) ------------------
+" tree style file listing
+let g:netrw_liststyle = 3
+" hide files defined in .gitignore and some other patterns
+let g:netrw_list_hide = netrw_gitignore#Hide().'.*\.pyc,.*\.aux,.*\.fdb_latexmk,.*\.fls,.*\.synctex\.gz,.*\.toc'
+" appearance configs
+let g:netrw_winsize = 25
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => VIM user interface
