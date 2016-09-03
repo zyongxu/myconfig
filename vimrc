@@ -62,6 +62,9 @@ let g:netrw_list_hide = netrw_gitignore#Hide().'.*\.pyc,.*\.aux,.*\.fdb_latexmk,
 " appearance configs
 let g:netrw_winsize = 25
 
+"------------------ ctrlp.vim ------------------
+set runtimepath^=~/.vim/bundle/ctrlp.vim
+let g:ctrlp_map = '<c-n>'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => VIM user interface

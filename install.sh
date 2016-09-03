@@ -41,6 +41,9 @@ git clone https://github.com/Shougo/neocomplete.vim.git ~/.vim/bundle/neocomplet
 echo "install vimtex"
 git clone https://github.com/lervag/vimtex.git ~/.vim/bundle/vimtex.vim
 
+echo "install CtrlP"
+git clone https://github.com/ctrlpvim/ctrlp.vim.git ~/.vim/bundle/ctrlp.vim
+
 echo "link vim config"
 ln -s "$(pwd)/vimrc" ~/.vimrc
 
