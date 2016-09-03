@@ -53,7 +53,10 @@ ln -s "$(pwd)/latexmkrc" ~/.latexmkrc
 # 1. Manually download and install MacTex
 # 1.1. export PATH="${PATH}:/usr/local/texlive/2016/bin/x86_64-darwin"
 # 2. brew install macvim --with-lua --override-system-vim
-# 3. [optional] brew install neovim/neovim/neovim
-# 3.1. link vim config and plugins to neovim
-# 3.2. alias vim='nvim'
-# neovim doesn't work with latex plugins very well, so use GUI mvim (MacVim)
+# 3. Config the TexShop previewer so it could be used as the previewer for latex (forget about Preview, Skim and Adobe)
+# 3.1. Preference -> "Preview" tab -> check "Automatic Preview Update" under "External Editor" group box
+
+# 4. [optional] brew install neovim/neovim/neovim
+# 4.1. link vim config and plugins to neovim
+# 4.2. alias vim='nvim'
+# 4.3. neovim doesn't work with latex plugins very well, so use GUI mvim (MacVim) anyway
