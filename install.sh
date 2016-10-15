@@ -15,10 +15,6 @@ chsh -s /usr/bin/zsh
 echo "link .zshrc"
 ln -s "$(pwd)/zshrc" ~/.zshrc
 
-#echo "install solarized"
-#sudo apt-get install dconf-cli && \
-#gnome-terminal-colors-solarized/install.sh
-
 #################################
 #              tmux             #
 #################################
@@ -32,8 +28,8 @@ echo "install pathogen"
 mkdir -p ~/.vim/autoload ~/.vim/bundle && \
 curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
 
-#echo "install solarized vim theme"
-#git clone git://github.com/altercation/vim-colors-solarized.git ~/.vim/bundle/vim-colors-solarized
+echo "install gruvbox color scheme"
+git clone https://github.com/morhetz/gruvbox.git ~/.vim/bundle/gruvbox
 
 echo "install neocomplete"
 git clone https://github.com/Shougo/neocomplete.vim.git ~/.vim/bundle/neocomplete.vim

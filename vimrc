@@ -141,8 +141,7 @@ au BufNewFile,BufRead *.h set syntax=cpp11
 " Enable syntax highlighting
 syntax enable
 set background=dark
-set t_Co=16
-colorscheme solarized
+colorscheme gruvbox
 
 " Set extra options when running in GUI mode
 if has("gui_running")

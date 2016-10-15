@@ -2,7 +2,6 @@ Basic configurations to:
   1. use zsh (with on-my-zsh config)
   2. set vim config
   3. set tmux config
-  4. use solarized in both vim and terminal
 
 ## Installation:
   1. git clone https://github.com/zyongxu/myconfig.git ~/.myconfig
