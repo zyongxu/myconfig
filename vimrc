@@ -232,6 +232,11 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
+" CTRL-Tab is next buffer
+nnoremap <C-Tab> :bnext<CR>
+" CTRL-SHIFT-Tab is previous buffer
+nnoremap <C-S-Tab> :bprev<CR>
+
 " Useful mappings for managing tabs
 map <leader>tn :tabnew<cr>
 map <leader>to :tabonly<cr>
