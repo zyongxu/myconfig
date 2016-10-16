@@ -70,6 +70,12 @@ let g:ctrlp_by_filename = 1
 " regex style name matching
 let g:ctrlp_regexp = 1
 
+"------------------ vimtex ------------------
+" Use TexShop as the previewer in Mac
+if has('mac') || has('macunix')
+    let g:vimtex_view_general_viewer = '/Applications/TeX/TeXShop.app/Contents/MacOS/TeXShop'
+endif
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => VIM user interface
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
