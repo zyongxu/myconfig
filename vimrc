@@ -30,6 +30,10 @@ let mapleader = ";"
 " effect for certain types of files, like .tex
 let maplocalleader = "\\"
 
+" Turn on spell check for specific filetypes
+autocmd BufRead,BufNewFile *.md,*.tex setlocal spell spelllang=en_us
+
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => VIM plug-ins config
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
