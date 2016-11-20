@@ -13,7 +13,7 @@ echo "set zsh as default shell"
 chsh -s /usr/bin/zsh
 
 echo "link .zshrc"
-ln -s "$(pwd)/zshrc" ~/.zshrc
+ln -s "$(pwd)/custom.zsh" $ZSH_CUSTOM
 
 #################################
 #              tmux             #
@@ -57,5 +57,8 @@ ln -s "$(pwd)/latexmkrc" ~/.latexmkrc
 
 # 4. [optional] brew install neovim/neovim/neovim
 # 4.1. link vim config and plugins to neovim
+#      mkdir ~/.config
+#      ln -s ~/.vim ~/.config/nvim
+#      ln -s ~/.vimrc ~/.config/nvim/init.vim
 # 4.2. alias vim='nvim'
 # 4.3. neovim doesn't work with latex plugins very well, so use GUI mvim (MacVim) anyway
