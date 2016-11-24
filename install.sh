@@ -6,20 +6,17 @@
 #################################
 #             Shell             #
 #################################
-echo "download on-my-zsh"
-sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-
 echo "set zsh as default shell"
-chsh -s /usr/bin/zsh
+chsh -s $(which zsh)
 
 echo "link .zshrc"
-ln -s "$(pwd)/custom.zsh" $ZSH_CUSTOM
+ln -s "$(pwd)/zshrc" ~/.zshrc
 
 #################################
 #              tmux             #
 #################################
-echo "link tmux config"
-ln -s "$(pwd)/tmux.conf" ~/.tmux.conf
+#echo "link tmux config"
+#ln -s "$(pwd)/tmux.conf" ~/.tmux.conf
 
 #################################
 #              Vim              #
@@ -49,10 +46,11 @@ ln -s "$(pwd)/latexmkrc" ~/.latexmkrc
 ###########################
 # Extra steps for OS X :P #
 ###########################
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+brew install macvim --with-lua --override-system-vim
 # 1. Manually download and install MacTex
 # 1.1. export PATH="${PATH}:/usr/local/texlive/2016/bin/x86_64-darwin"
-# 2. brew install macvim --with-lua --override-system-vim
-# 3. Config the TexShop previewer so it could be used as the previewer for latex (forget about Preview, Skim and Adobe)
+# 2. Config the TexShop previewer so it could be used as the previewer for latex (forget about Preview, Skim and Adobe)
 # 3.1. Preference -> "Preview" tab -> check "Automatic Preview Update" under "External Editor" group box
 
 # 4. [optional] brew install neovim/neovim/neovim
