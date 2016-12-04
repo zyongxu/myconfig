@@ -17,8 +17,8 @@ RPROMPT=[%F{yellow}%T%f]
 #--------------------
 # alias
 #--------------------
-alias l="ls -lF"
-alias ll="ls -alF"
+alias l="ls -lhF"
+alias ll="ls -alhF"
 alias c="clear"
 
 
