@@ -10,7 +10,7 @@ export LSCOLORS=gxfxcxdxbxegedabagacad
 unsetopt beep
 
 # prompt format
-PROMPT='[%F{yellow}%~@%m%f]%% '
+PROMPT='[%F{cyan}%m:%f%F{yellow}%~%f]%% '
 RPROMPT=[%F{yellow}%T%f]
 
 
