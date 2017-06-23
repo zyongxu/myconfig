@@ -80,6 +80,9 @@ if has('mac') || has('macunix')
     let g:vimtex_view_general_viewer = '/Applications/TeX/TeXShop.app/Contents/MacOS/TeXShop'
 endif
 
+"------------------ vim-gitgutter ------------------
+let g:gitgutter_realtime = 0  "turn off realtime update, only update on buffer save, etc
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => VIM user interface
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -139,6 +142,7 @@ set mat=2
 set noerrorbells
 set novisualbell
 set t_vb=
+autocmd! GUIEnter * set vb t_vb=
 set tm=500
 
 " Using cpp11.vim for c++ syntax
