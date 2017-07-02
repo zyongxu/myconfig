@@ -68,11 +68,14 @@ let g:netrw_winsize = 25
 
 "------------------ ctrlp.vim ------------------
 set runtimepath^=~/.vim/bundle/ctrlp.vim
+" Ctrl + n to start search
 let g:ctrlp_map = '<c-n>'
 " search by filename, not by path
 let g:ctrlp_by_filename = 1
 " regex style name matching
 let g:ctrlp_regexp = 1
+" use .gitignore to exclude files in the search
+let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
 
 "------------------ vimtex ------------------
 " Use TexShop as the previewer in Mac
