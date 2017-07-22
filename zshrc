@@ -11,7 +11,17 @@ unsetopt beep
 
 # prompt format
 PROMPT='[%F{cyan}%m:%f%F{yellow}%~%f]%% '
-RPROMPT=[%F{yellow}%T%f]
+RPROMPT=' ${vcs_info_msg_0_} %F{yellow}%T%f'
+
+# display git info
+autoload -Uz vcs_info
+precmd() { vcs_info }
+setopt prompt_subst
+zstyle ':vcs_info:*' enable git
+zstyle ':vcs_info:*' formats '%F{5}[%F{2}%b%F{5} %u%c]%f'
+zstyle ':vcs_info:*' check-for-changes true
+zstyle ':vcs_info:*' unstagedstr 'U'
+zstyle ':vcs_info:*' stagedstr 'S'
 
 
 #--------------------
@@ -29,10 +39,7 @@ zstyle :compinstall filename '/Users/yxz/.zshrc'
 
 autoload -Uz compinit
 compinit
-
-zstyle ':vcs_info:*' actionformats '%F{5}(%f%s%F{5})%F{3}-%F{5}[%F{2}%b%F{3}|%F{1}%a%F{5}]%f '
-zstyle ':vcs_info:*' formats '%F{5}(%f%s%F{5})%F{3}-%F{5}[%F{2}%b%F{5}]%f '
-zstyle ':vcs_info:*' enable git
+zstyle ':completion:*' menu select
 
 # Enable completion caching, use rehash to clear
 zstyle ':completion::complete:*' use-cache on
