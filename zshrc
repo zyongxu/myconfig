@@ -11,15 +11,14 @@ unsetopt beep
 
 # prompt format
 PROMPT='[%F{cyan}%m:%f%F{yellow}%~%f]%% '
-RPROMPT=' ${vcs_info_msg_0_} ${vcs_info_msg_1_} %F{yellow}%T%f'
+RPROMPT=' ${vcs_info_msg_0_} %F{yellow}%T%f'
 
 # display git info
 autoload -Uz vcs_info
 precmd() { vcs_info }
 setopt prompt_subst
 zstyle ':vcs_info:*' enable git
-zstyle ':vcs_info:*' formats '%F{5}[%F{2}%b%F{5}%u%c]%f (%a) ||'
-zstyle ':vcs_info:*' actionformats '(%a)'
+zstyle ':vcs_info:*' formats '%F{5}[%F{2}%b%F{5}%u%c]%f'
 zstyle ':vcs_info:*' check-for-changes true
 zstyle ':vcs_info:*' unstagedstr ' U'
 zstyle ':vcs_info:*' stagedstr ' S'
