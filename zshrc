@@ -18,10 +18,10 @@ autoload -Uz vcs_info
 precmd() { vcs_info }
 setopt prompt_subst
 zstyle ':vcs_info:*' enable git
-zstyle ':vcs_info:*' formats '%F{5}[%F{2}%b%F{5} %u%c]%f'
+zstyle ':vcs_info:*' formats '%F{5}[%F{2}%b%F{5}%u%c]%f'
 zstyle ':vcs_info:*' check-for-changes true
-zstyle ':vcs_info:*' unstagedstr 'U'
-zstyle ':vcs_info:*' stagedstr 'S'
+zstyle ':vcs_info:*' unstagedstr ' U'
+zstyle ':vcs_info:*' stagedstr ' S'
 
 
 #--------------------
