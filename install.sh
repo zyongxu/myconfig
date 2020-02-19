@@ -43,23 +43,15 @@ git clone git://github.com/airblade/vim-gitgutter.git
 echo "link vim config"
 ln -s "$(pwd)/vimrc" ~/.vimrc
 
-echo "link latexmk config"
-ln -s "$(pwd)/latexmkrc" ~/.latexmkrc
+#echo "link latexmk config"
+#ln -s "$(pwd)/latexmkrc" ~/.latexmkrc
 
 ###########################
 # Extra steps for OS X :P #
 ###########################
-/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-brew install macvim --with-lua --override-system-vim
+#/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+#brew install macvim --with-lua --override-system-vim
 # 1. Manually download and install MacTex
 # 1.1. export PATH="${PATH}:/usr/local/texlive/2016/bin/x86_64-darwin"
 # 2. Config the TexShop previewer so it could be used as the previewer for latex (forget about Preview, Skim and Adobe)
 # 3.1. Preference -> "Preview" tab -> check "Automatic Preview Update" under "External Editor" group box
-
-# 4. [optional] brew install neovim/neovim/neovim
-# 4.1. link vim config and plugins to neovim
-#      mkdir ~/.config
-#      ln -s ~/.vim ~/.config/nvim
-#      ln -s ~/.vimrc ~/.config/nvim/init.vim
-# 4.2. alias vim='nvim'
-# 4.3. neovim doesn't work with latex plugins very well, so use GUI mvim (MacVim) anyway
