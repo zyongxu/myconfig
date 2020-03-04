@@ -148,9 +148,9 @@ set t_vb=
 autocmd! GUIEnter * set vb t_vb=
 set tm=500
 
-" Using cpp11.vim for c++ syntax
-au BufNewFile,BufRead *.cpp set syntax=cpp11
-au BufNewFile,BufRead *.h set syntax=cpp11
+" highlight column 110 with color
+set colorcolumn=110
+highlight ColorColumn ctermbg=darkgray
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Colors and Fonts

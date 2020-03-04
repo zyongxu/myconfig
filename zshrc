@@ -27,10 +27,12 @@ zstyle ':vcs_info:*' stagedstr ' S'
 #--------------------
 # alias
 #--------------------
+alias ls='ls --color=auto'
 alias l="ls -lhF"
 alias ll="ls -alhF"
 alias c="clear"
-
+alias tmux="tmux -u"
+alias grep="grep --color=always"
 
 #--------------------
 # auto-complete

@@ -37,8 +37,8 @@ git clone https://github.com/lervag/vimtex.git ~/.vim/bundle/vimtex.vim
 echo "install CtrlP"
 git clone https://github.com/ctrlpvim/ctrlp.vim.git ~/.vim/bundle/ctrlp.vim
 
-echo "install vim-gitgutter"
-git clone git://github.com/airblade/vim-gitgutter.git
+echo "install tabs for buffers"
+git clone https://github.com/ap/vim-buftabline.git ~/.vim/bundle/vim-buftabline
 
 echo "link vim config"
 ln -s "$(pwd)/vimrc" ~/.vimrc
