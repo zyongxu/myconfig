@@ -1,26 +1,4 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Plug-ins (use vim-plug)
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Useful vim-plug commands:
-"   ':PlugInstall'  Install all plugins
-"   ':PlugUpdate'   Install or update plugins
-"   ':PlugClean[!]' Remove unlisted plugins (bang version will clean without prompt)
-"   ':PlugUpgrade'  Upgrade vim-plug itself
-"   ':PlugStatus'   Check the status of plugins
-"   ':PlugDiff'     Examine changes from the previous update and the pending changes
-
-call plug#begin('~/.vim/plugged')
-" color scheme
-Plug 'https://github.com/morhetz/gruvbox.git'
-" latex syntax and autocomplete
-Plug 'https://github.com/lervag/vimtex.git'
-" fuzzy file search
-Plug 'https://github.com/ctrlpvim/ctrlp.vim.git'
-" use tabs to represent buffers
-Plug 'https://github.com/ap/vim-buftabline.git'
-call plug#end()
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Key Bindings and Commands
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " With a map leader it's possible to do extra key combinations

@@ -11,6 +11,10 @@ endif
 " Sets how many lines of history VIM has to remember
 set history=1000
 
+call plug#begin('~/.vim/plugged')
+source ~/.myconfig/plugin.vimrc
+call plug#end()
+
 source $HOME/.myconfig/common.vimrc
 
 "------------------ YouCompleteMe ------------------
