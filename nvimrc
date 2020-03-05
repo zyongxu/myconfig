@@ -28,9 +28,6 @@ source $HOME/.myconfig/common.vimrc
 " this seems dangerous, but coc.vim/lsp somehow requires this
 set nowritebackup
 
-" Give more space for displaying messages.
-set cmdheight=2
-
 " Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
 " delays and poor user experience.
 set updatetime=300
@@ -93,4 +90,9 @@ command! -nargs=? Fold :call     CocAction('fold', <f-args>)
 
 " Add `:OR` command for organize imports of the current buffer.
 command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organizeImport')
+
+" Add (Neo)Vim's native statusline support.
+set statusline+=\ 
+set statusline+=%#WildMenu#
+set statusline+=%{coc#status()}%{get(b:,'coc_current_function','')}
 " ====== end of coc.vim config ======

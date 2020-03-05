@@ -210,8 +210,11 @@ set viminfo^=%
 set laststatus=2
 
 " Format the status line
-"set statusline=\ %F%m%r%h\ %w\ \ \ Line:\ %l/%L\ (%p%%)
-
+set statusline=
+set statusline+=\ %F%m%r%h%w
+set statusline+=%=
+set statusline+=\ %l:%c\|%p%%
+set statusline+=\ %y
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Editing mappings
