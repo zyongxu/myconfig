@@ -1,54 +1,38 @@
 #!/bin/bash
 
-#echo "Fetch git submodules..."
-#git submodule update --init --recursive
-
-#################################
-#             Shell             #
-#################################
+########## Shell ##########
 echo "set zsh as default shell"
 chsh -s $(which zsh)
 
 echo "link .zshrc"
 ln -s "$(pwd)/zshrc" ~/.zshrc
 
-#################################
-#              tmux             #
-#################################
-#echo "link tmux config"
-#ln -s "$(pwd)/tmux.conf" ~/.tmux.conf
+########## tmux ##########
+echo "link tmux config"
+ln -s "$(pwd)/tmux.conf" ~/.tmux.conf
 
-#################################
-#              Vim              #
-#################################
-echo "install pathogen"
-mkdir -p ~/.vim/autoload ~/.vim/bundle && \
-curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
+########## NeoVim ##########
+echo "link nvim config"
+mkdir -p ~/.config/nvim
+ln -s "$(pwd)/nvimrc" ~/.config/nvim/init.vim
 
-echo "install gruvbox color scheme"
-git clone https://github.com/morhetz/gruvbox.git ~/.vim/bundle/gruvbox
-
-echo "install neocomplete"
-git clone https://github.com/Shougo/neocomplete.vim.git ~/.vim/bundle/neocomplete.vim
-
-echo "install vimtex"
-git clone https://github.com/lervag/vimtex.git ~/.vim/bundle/vimtex.vim
-
-echo "install CtrlP"
-git clone https://github.com/ctrlpvim/ctrlp.vim.git ~/.vim/bundle/ctrlp.vim
-
-echo "install tabs for buffers"
-git clone https://github.com/ap/vim-buftabline.git ~/.vim/bundle/vim-buftabline
-
+########## Vim ##########
 echo "link vim config"
 ln -s "$(pwd)/vimrc" ~/.vimrc
 
+#echo "install YouCompleteMe"
+#git clone https://github.com/ycm-core/YouCompleteMe.git ~/.vim/bundle/YouCompleteMe
+#cd ~/.vim/bundle/YouCompleteMe && \
+#git submodule update --init --recursive && \
+#python3 ./install.py --clangd-completer
+
+########## Latex ##########
 #echo "link latexmk config"
 #ln -s "$(pwd)/latexmkrc" ~/.latexmkrc
 
-###########################
-# Extra steps for OS X :P #
-###########################
+########################
+# Extra steps for OS X #
+########################
 #/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 #brew install macvim --with-lua --override-system-vim
 # 1. Manually download and install MacTex
