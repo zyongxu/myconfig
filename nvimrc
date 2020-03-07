@@ -41,8 +41,15 @@ set signcolumn=yes
 
 " use <Tab> and <Shift-Tab> to navigate the completion list
 " NOTE: run ':verbose imap <tab>' to make sure <tab> is not already mapped
-inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
-inoremap <expr><S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
 
 " use <tab> to go to next element in a snippet
 let g:coc_snippet_next = '<tab>'
