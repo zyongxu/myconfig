@@ -11,10 +11,13 @@ ln -s "$(pwd)/zshrc" ~/.zshrc
 echo "link tmux config"
 ln -s "$(pwd)/tmux.conf" ~/.tmux.conf
 
+# NOTE: the first time nvim or vim is opened, it will automatically download vim-plug,
+#       this is specified in the corresponding vim config file
 ########## NeoVim ##########
 echo "link nvim config"
 mkdir -p ~/.config/nvim
 ln -s "$(pwd)/nvimrc" ~/.config/nvim/init.vim
+echo "run \`:checkhealth\` in neovim to confirm everything works"
 
 ########## Vim ##########
 echo "link vim config"
