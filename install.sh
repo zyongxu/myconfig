@@ -1,44 +1,42 @@
 #!/bin/bash
 
-########## Shell ##########
-echo "set zsh as default shell"
-chsh -s $(which zsh)
+printf "setting default shell to zsh... "
+if (( $(basename $SHELL) != 'zsh' ))
+then
+    echo "set zsh as the default shell"
+    chsh -s $(which zsh)
+else
+    echo "zsh is already the default shell"
+fi
 
-echo "link .zshrc"
-ln -s "$(pwd)/zshrc" ~/.zshrc
+echo -e "\ncreating symbolic links for config files..."
+function link_rc {
+    if [ ! -f $2 ]
+    then
+        source_path="$(pwd)/$1"
+        echo -e "[linking]       $source_path\t->\t$2"
+        mkdir -p $(dirname $2)
+        ln -s $source_path $2
+    else
+        echo -e "[already exist] $2"
+    fi
+}
 
-########## tmux ##########
-echo "link tmux config"
-ln -s "$(pwd)/tmux.conf" ~/.tmux.conf
+link_rc "zshrc" "$HOME/.zshrc"
+link_rc "tmux.conf" "$HOME/.tmux.conf"
+link_rc "latexmkrc" "$HOME/.latexmkrc"
+# the first time nvim or vim is opened, it will automatically download "vim-plug"
+# this behavior is specified in vimrc/nvimrc
+link_rc "vimrc" "$HOME/.vimrc"
+link_rc "nvimrc" "$HOME/.config/nvim/init.vim"
+printf "\n\e[1;32mrun \`:checkhealth\` in neovim to confirm everything works\e[0m\n"
 
-# NOTE: the first time nvim or vim is opened, it will automatically download vim-plug,
-#       this is specified in the corresponding vim config file
-########## NeoVim ##########
-echo "link nvim config"
-mkdir -p ~/.config/nvim
-ln -s "$(pwd)/nvimrc" ~/.config/nvim/init.vim
-echo "run \`:checkhealth\` in neovim to confirm everything works"
-
-########## Vim ##########
-echo "link vim config"
-ln -s "$(pwd)/vimrc" ~/.vimrc
-
-#echo "install YouCompleteMe"
-#git clone https://github.com/ycm-core/YouCompleteMe.git ~/.vim/bundle/YouCompleteMe
-#cd ~/.vim/bundle/YouCompleteMe && \
-#git submodule update --init --recursive && \
-#python3 ./install.py --clangd-completer
-
-########## Latex ##########
-#echo "link latexmk config"
-#ln -s "$(pwd)/latexmkrc" ~/.latexmkrc
-
-########################
-# Extra steps for OS X #
-########################
-#/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-#brew install macvim --with-lua --override-system-vim
-# 1. Manually download and install MacTex
-# 1.1. export PATH="${PATH}:/usr/local/texlive/2016/bin/x86_64-darwin"
-# 2. Config the TexShop previewer so it could be used as the previewer for latex (forget about Preview, Skim and Adobe)
-# 3.1. Preference -> "Preview" tab -> check "Automatic Preview Update" under "External Editor" group box
+if [[ $(uname -s) == Darwin* ]]; then
+    echo -e "\nthis seems to be OS X, consider manually install the following:"
+    printf  '1. \e[1;32mhomebrew (https://docs.brew.sh/Installation)\e[0m\n'
+    echo -e '2. MacTex (for LaTex):'
+    echo -e '     1. Manually download and install MacTex'
+    echo -e '     2. export PATH="${PATH}:/usr/local/texlive/2016/bin/x86_64-darwin"'
+    echo -e '     3. Set TexShop previewer as the previewer for vimtex'
+    echo -e '     4. Preference -> "Preview" tab -> check "Automatic Preview Update" under "External Editor" group box'
+fi
