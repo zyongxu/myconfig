@@ -27,7 +27,6 @@ zstyle ':vcs_info:*' stagedstr ' S'
 #--------------------
 # alias
 #--------------------
-alias ls='ls --color=auto'
 alias l="ls -lhF"
 alias ll="ls -alhF"
 alias c="clear"
